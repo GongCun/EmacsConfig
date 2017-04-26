@@ -16,7 +16,7 @@ Emacs帶給我驚喜，使用它寫類RFC文檔真的非常方便，不僅沒有
 viper-mode，但是這樣來說就沒太大意義，畢竟我就是厭倦了Vi的模式切換。所
 以花一點時間，學習一下Elisp編程，或者到stack-overflow上抄抄別人的答案
 并試著理解，我根據一份”Emacs for vi users“的清單，定制了若干Vi鍵綁定，
-全部以**C-c**作為前綴，列在下面，供大家參考。（關於區域內搜索和替換，
+大部分以**ESC-ESC**作為前綴，列在下面，供大家參考。（關於區域內搜索和替換，
 我還沒寫出鍵綁定。）
 
 另外，Emacs的初始化配置文件`.emacs`也是經常變動的，所以一併加入版本管理。
@@ -24,40 +24,40 @@ viper-mode，但是這樣來說就沒太大意義，畢竟我就是厭倦了Vi�
 
 ## Emacs for vi users
 
-**C-a** corresponds to *Control+A*, and **M-f** corresponds to *Meta+F*
+**E-E** corresponds to *ESC\-ESC*, **C-a** corresponds to *Control+A*, and **M-f** corresponds to *Meta+F*
 
 | Action | Vi | Emacs | Notes on Emacs |
 | :--- | :---- | :---- | :--- |
 | Go to beginning of buffer | 1G | C-up | Mac OS X don't have `Home` key|
 | Go to end of buffer | G | C-down | Mac OS X don't have `End` key|
-| Go to line n | *n*G | C-c g | |
+| Go to line n | *n*G | E-E g | |
 | Go to beginning of line | 0 | C-a | |
 | Go to end of line | $ | C-e | |
-| Set mark *x* | m *x* | C-c m | |
-| Go to mark *x* | \`*x* | C-c \` | |
-| Go to first displayed line | H | C-c H | |
-| Go to last displayed line | L | C-c L | |
-| Go to middle displayed line | M | C-c M | |
-| Delete n lines | *n* dd | M-*n* C-c dd | |
-| Yank n lines | *n* yy | M-*n* C-c yy | |
+| Set mark *x* | m *x* | E-E m | |
+| Go to mark *x* | \`*x* | E-E \` | |
+| Go to first displayed line | H | E-E H | |
+| Go to last displayed line | L | E-E L | |
+| Go to middle displayed line | M | E-E M | |
+| Delete n lines | *n* dd | M-*n* E-E dd | |
+| Yank n lines | *n* yy | M-*n* E-E yy | |
 | Open line above | O | C-M-o | |
 | Open line below | o | C-o | |
-| Join lines | J | C-c J | |
-| Search forward for character *x* in current line | f *x* | C-c f | Input *x* |
-| Search forward to character before *x* in current line | t *x* | C-c t | Input *x* |
-| Delete forward for character *x* in current line | df *x* | C-c d f | Input *x* |
-| Delete forward to character before *x* in current line | dt *x* | C-c d t | Input *x* |
-| Delete to the end of line | D | C-k, or C-c D | |
-| Delete to the beginning of line | d0 | C-c d 0 | |
-| Delete to the end of buffer | dG | C-c d G | |
-| Delete to the beginning of buffer | :1,.d | C-c d g | |
-| Yank from *beginning* to *end* lines | :*beginning\#*,*end\#*y | C-c r y | Input *beginning\#*, *end\#* |
-| Delete from *beginning* to *end* lines | :*beginning\#*,*end\#*d | C-c r d | Input *beginning\#*, *end\#* |
+| Join lines | J | E-E J | |
+| Search forward for character *x* in current line | f *x* | E-E f | Input *x* |
+| Search forward to character before *x* in current line | t *x* | E-E t | Input *x* |
+| Delete forward for character *x* in current line | df *x* | E-E d f | Input *x* |
+| Delete forward to character before *x* in current line | dt *x* | E-E d t | Input *x* |
+| Delete to the end of line | D | C-k, or E-E D | |
+| Delete to the beginning of line | d0 | E-E d 0 | |
+| Delete to the end of buffer | dG | E-E d G | |
+| Delete to the beginning of buffer | :1,.d | E-E d g | |
+| Yank from *beginning* to *end* lines | :*beginning\#*,*end\#*y | E-E r y | Input *beginning\#*, *end\#* |
+| Delete from *beginning* to *end* lines | :*beginning\#*,*end\#*d | E-E r d | Input *beginning\#*, *end\#* |
 | Auto-complete single word | C-x C-n | M-/ | |
-| Auto-complete whole line | C-x C-l | C-c C-l | |
+| Auto-complete whole line | C-x C-l | C-x C-l | |
 | Compile command | :make | `F8` | |
 | Move to the next error message and visit the corresponding source code | :cnext | C-x \` | Use `ctags` or `etags` to make file tags first |
-| Run shell command | :!*shell-command* | C-c ! *shell-command* | |
-| Read from shell command | :r!*shell-command* | C-u C-c ! *shell-command* | |
+| Run shell command | :!*shell-command* | E-E ! *shell-command* | |
+| Read from shell command | :r!*shell-command* | C-u E-E ! *shell-command* | |
 | Write to shell command and read back | :*beginning*,*end*!*shell-command* | M-h M-&#124; *shell-command* | |
 
